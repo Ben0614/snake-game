@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Coursier";
+}
+
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: skyblue;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  #stage {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    position: relative;
+
+    #snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        // 讓蛇的每一節之間有空隙
+        border: 1px solid skyblue;
+        position: absolute;
+      }
+    }
+
+    #food {
+      display: flex;
+      // flex-direction + flex-wrap
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      left: 40px;
+      top: 100px;
+
+      & > div {
+        width: 4px;
+        height: 4px;
+        background-color: #000;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  #score-panel {
+    width: 304px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

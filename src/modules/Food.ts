@@ -6,6 +6,8 @@ class Food {
   constructor() {
     //  獲取頁面中的food元素，並將其賦值給element
     this.element = document.getElementById("food")!;
+    // 開始時隨機設定食物的位置
+    this.change();
   }
 
   // 定義一個獲取食物x座標的方法

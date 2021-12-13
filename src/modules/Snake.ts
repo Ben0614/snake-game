@@ -9,6 +9,12 @@ class Snake {
     this.element = document.getElementById("snake")!;
     this.head = document.querySelector("#snake > div")!; // 如果類型還是不匹配，可以刪除!，並加上as HTMLElement (斷言)
     this.bodies = this.element.getElementsByTagName("div"); // 獲取snake底下所有div
+
+    // 開始時隨機設定蛇的位置
+    let top = Math.round(Math.random() * 29) * 10;
+    let left = Math.round(Math.random() * 29) * 10;
+    this.head.style.left = left + "px";
+    this.head.style.top = top + "px";
   }
 
   // 獲取蛇頭座標

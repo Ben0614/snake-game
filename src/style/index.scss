@@ -12,7 +12,7 @@ body {
   width: 360px;
   height: 420px;
   background-color: skyblue;
-  margin: 100px auto;
+  margin: 100px auto 40px;
   border: 10px solid black;
   border-radius: 10%;
   display: flex;
@@ -59,8 +59,36 @@ body {
   }
 
   #score-panel {
-    width: 304px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+#instruction {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+
+  #two-area {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  #up,
+  #left,
+  #right,
+  #down {
+    cursor: pointer;
+  }
+  #left,
+  #right {
+    margin: 0 20px;
   }
 }

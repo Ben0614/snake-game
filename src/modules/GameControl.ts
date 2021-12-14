@@ -16,10 +16,19 @@ class GameControl {
   // 創建一個屬性紀錄遊戲是否結束
   isLive = true;
 
+  up: HTMLElement;
+  left: HTMLElement;
+  right: HTMLElement;
+  down: HTMLElement;
+
   constructor() {
     this.snake = new Snake();
     this.food = new Food();
     this.scorePanel = new ScorePanel(10, 2);
+    this.up = document.getElementById("up")!;
+    this.left = document.getElementById("left")!;
+    this.right = document.getElementById("right")!;
+    this.down = document.getElementById("down")!;
 
     this.init();
   }
@@ -29,6 +38,7 @@ class GameControl {
     // 綁定鍵盤按下的事件
     // 因為事件是window綁定的，this會指向window，所以要用bind改為指向GameControl
     window.addEventListener("keydown", this.handleKeyDown.bind(this));
+    this.handleButton();
 
     // 調用run方法，使蛇移動
     this.run();
@@ -54,6 +64,21 @@ class GameControl {
     // 檢查e.key的值是否合法 (是否按上下左右鍵)
     // 修改direction屬性
     this.direction = e.key;
+  }
+  // 創建按鈕按下的函數
+  handleButton() {
+    this.up.addEventListener("click", () => {
+      this.direction = "ArrowUp";
+    });
+    this.left.addEventListener("click", () => {
+      this.direction = "ArrowLeft";
+    });
+    this.right.addEventListener("click", () => {
+      this.direction = "ArrowRight";
+    });
+    this.down.addEventListener("click", () => {
+      this.direction = "ArrowDown";
+    });
   }
 
   // 創建一個控制蛇移動的方法

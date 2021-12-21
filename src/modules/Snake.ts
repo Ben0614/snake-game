@@ -44,6 +44,7 @@ class Snake {
       (this.bodies[1] as HTMLElement).offsetLeft === value
     ) {
       // 如果發生掉頭，讓蛇繼續往反方向走
+      // 這邊value > 指的是頭按右鍵，value會大於this.X
       if (value > this.X) {
         // 如果新值value大於舊值X，則說明蛇在向左走，此時發生掉頭，應該讓蛇繼續向左走
         // value就是蛇頭的位置，原本往左走，突然向右的話value就會大於X

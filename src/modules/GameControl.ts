@@ -121,7 +121,7 @@ class GameControl {
     try {
       this.snake.X = X;
       this.snake.Y = Y;
-    } catch (e: unknown) {
+    } catch (e) {
       // 進入到catch，說明出現了異常，彈出alert
       if (e instanceof Error) {
         alert(e.message);
